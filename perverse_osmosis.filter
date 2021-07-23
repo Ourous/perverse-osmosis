@@ -94,6 +94,13 @@ Show
 	PlayEffect Brown Temp
 	Continue
 
+### Expedition
+Show
+	Class "Expedition Logbook"
+	MinimapIcon 2 Grey Square
+	SetBackgroundColor 57 57 57 247
+	Continue
+
 ### Heist
 Show
 	Class "Heist" "Trinket"
@@ -168,7 +175,7 @@ Hide #boots
 	Rarity < Unique
 	ItemLevel >= 86
 	Class "Boots"
-	BaseType "Titan Greaves" "Slink Boots" "Sorcerer Boots" "Murder Boots" "Two-Toned Boots" "Stormrider Boots" "Dreamquest Slippers" "Brimstone Treads" "Blessed Boots"
+	BaseType "Titan Greaves" "Slink Boots" "Sorcerer Boots" "Murder Boots" "Two-Toned Boots" "Stormrider Boots" "Dreamquest Slippers" "Brimstone Treads" "Fugitive Boots"
 	SetBackgroundColor 0 0 0 200
 	SetBorderColor 184 218 242 255
 	SetFontSize 18
@@ -268,7 +275,7 @@ Hide #1h swords
 	Rarity < Unique
 	ItemLevel >= 85
 	Class "One Hand Sword"
-	BaseType "Anarchic Spiritblade" "Legion Sword" "Vaal Blade" "Eternal Sword" "Midnight Blade" "Tiger Hook" "Corsair Sword"
+	BaseType "Anarchic Spiritblade" "Legion Sword" "Vaal Blade" "Eternal Sword" "Midnight Blade" "Tiger Hook" "Corsair Sword" "Courtesan Sword" "Tempered Foil" "Vaal Rapier" "Jewelled Foil" "Harpy Rapier" "Dragoon Sword"
 	SetBackgroundColor 0 0 0 200
 	SetBorderColor 184 218 242 255
 	SetFontSize 18
@@ -299,16 +306,6 @@ Hide #war staves
 	ItemLevel >= 85
 	Class "Warstaves"
 	BaseType "Eventuality Rod" "Maelström Staff" "Judgement Staff"
-	SetBackgroundColor 0 0 0 200
-	SetBorderColor 184 218 242 255
-	SetFontSize 18
-	Continue
-Hide #1h rapier
-	Corrupted False
-	Rarity < Unique
-	ItemLevel >= 85
-	Class "Thrusting One Hand Sword"
-	BaseType "Courtesan Sword" "Tempered Foil" "Vaal Rapier" "Jewelled Foil" "Harpy Rapier" "Dragoon Sword"
 	SetBackgroundColor 0 0 0 200
 	SetBorderColor 184 218 242 255
 	SetFontSize 18
@@ -397,7 +394,7 @@ Hide #restore flasks
 	Rarity < Unique
 	ItemLevel >= 20
 	Class "Life Flasks" "Mana Flasks" "Hybrid Flasks"
-	BaseType "Hallowed Hybrid Flask" "Eternal Life Flask" "Divine Life Flask" "Eternal Mana Flask" "Divine Mana Flask"
+	BaseType "Hallowed Hybrid Flask" "Eternal Life Flask" "Divine Life Flask" "Hallowed Life Flask" "Eternal Mana Flask" "Divine Mana Flask" "Hallowed Mana Flask"
 	SetBackgroundColor 0 0 0 200
 	SetBorderColor 184 218 242 255
 	SetFontSize 18
@@ -500,7 +497,7 @@ Show #body armour
 Show #boots
 	Rarity = Rare
 	Class "Boots"
-	BaseType "Titan Greaves" "Slink Boots" "Sorcerer Boots" "Murder Boots" "Two-Toned Boots" "Stormrider Boots" "Dreamquest Slippers" "Brimstone Treads" "Blessed Boots"
+	BaseType "Titan Greaves" "Slink Boots" "Sorcerer Boots" "Murder Boots" "Two-Toned Boots" "Stormrider Boots" "Dreamquest Slippers" "Brimstone Treads" "Fugitive Boots"
 	SetBackgroundColor 0 0 0 200
 	SetFontSize 24
 	Continue
@@ -570,7 +567,7 @@ Show #1h maces
 Show #1h swords
 	Rarity = Rare
 	Class "One Hand Sword"
-	BaseType "Anarchic Spiritblade" "Legion Sword" "Vaal Blade" "Eternal Sword" "Midnight Blade" "Tiger Hook" "Corsair Sword"
+	BaseType "Anarchic Spiritblade" "Legion Sword" "Vaal Blade" "Eternal Sword" "Midnight Blade" "Tiger Hook" "Corsair Sword" "Courtesan Sword" "Tempered Foil" "Vaal Rapier" "Jewelled Foil" "Harpy Rapier" "Dragoon Sword"
 	SetBackgroundColor 0 0 0 200
 	SetFontSize 24
 	Continue
@@ -592,13 +589,6 @@ Show #war staves
 	Rarity = Rare
 	Class "Warstaves"
 	BaseType "Eventuality Rod" "Maelström Staff" "Judgement Staff"
-	SetBackgroundColor 0 0 0 200
-	SetFontSize 24
-	Continue
-Show #1h rapier
-	Rarity = Rare
-	Class "Thrusting One Hand Sword"
-	BaseType "Courtesan Sword" "Tempered Foil" "Vaal Rapier" "Jewelled Foil" "Harpy Rapier" "Dragoon Sword"
 	SetBackgroundColor 0 0 0 200
 	SetFontSize 24
 	Continue
@@ -1334,7 +1324,7 @@ Show #regal shard-like
 	SetBorderColor 136 136 255 255
 Show #exalted
 	Class "Divination Card"
-	BaseType "Brother's Stash"
+	BaseType "Alluring Bounty" "Brother's Stash"
 	MinimapIcon 0 Yellow Diamond
 	PlayEffect Yellow
 	PlayAlertSound 10 250
@@ -1438,7 +1428,7 @@ Show #rares
 	SetBackgroundColor 255 255 119 180
 Show #craftable rares
 	Class "Divination Card"
-	BaseType "Destined to Crumble" "Dying Light" "Nook's Crown" "The Opulent" "Perfection" "Prometheus' Armoury"
+	BaseType "Destined to Crumble" "Dying Light" "Nook's Crown" "The Awakened" "The Opulent" "Perfection" "Prometheus' Armoury"
 	MinimapIcon 2 White Diamond
 	SetBackgroundColor 255 255 119 180
 	SetBorderColor 184 218 242 255
@@ -1536,7 +1526,7 @@ Show #uniques #!TODO! split this up
 	SetBackgroundColor 175 96 37 180
 Show #uniques
 	Class "Divination Card"
-	BaseType "Haunting Shadows" "Prejudice" "Reckless Ambition" "Succor of the Sinless" "The Adventuring Spirit" "The Deep Ones" "The Hook" "The Long Watch" "The Whiteout" "Winter's Embrace"
+	BaseType "Haunting Shadows" "Prejudice" "Reckless Ambition" "Succor of the Sinless" "The Academic" "The Adventuring Spirit" "The Deep Ones" "The Hook" "The Long Watch" "The Whiteout" "Winter's Embrace"
 	MinimapIcon 2 Brown Diamond
 	SetBackgroundColor 175 96 37 180
 Show #fishing uniques
@@ -1552,7 +1542,7 @@ Show #enchanted uniques
 	SetBorderColor 73 85 79 255
 Show #corrupt uniques
 	Class "Divination Card"
-	BaseType "A Modest Request" "Anarchy's Price" "Arrogance of the Vaal" "Atziri's Arsenal" "Audacity" "Blind Venture" "Brotherhood in Exile" "Deadly Joy" "Echoes of Love" "Etched in Blood" "Fateful Meeting" "Forbidden Power" "Hope" "Love Through Ice" "Luck of the Vaal" "Luminous Trove" "Lysah's Respite" "Mawr Blaidd" "Pride Before the Fall" "The Astromancer" "The Avenger" "The Brittle Emperor" "The Chosen" "The Cursed King" "The Darkest Dream" "The Deceiver" "The Devastator" "The Encroaching Darkness" "The Enthusiasts" "The Eternal War" "The Eye of the Dragon" "The Feast" "The Fiend" "The Fletcher" "The Gentleman" "The Gulf" "The Insatiable" "The Landing" "The Lich" "The Mercenary" "The One With All" "The Poet" "The Ruthless Ceinture" "The Siren" "The Thaumaturgist" "The Throne" "The Traitor" "The Undaunted" "The Wolverine" "Treasure Hunter" "Turn the Other Cheek" "Unchained"
+	BaseType "A Modest Request" "Anarchy's Price" "Arrogance of the Vaal" "Atziri's Arsenal" "Audacity" "Blind Venture" "Brotherhood in Exile" "Deadly Joy" "Echoes of Love" "Etched in Blood" "Fateful Meeting" "Forbidden Power" "Hope" "Love Through Ice" "Luck of the Vaal" "Luminous Trove" "Lysah's Respite" "Mawr Blaidd" "Pride Before the Fall" "The Astromancer" "The Avenger" "The Brittle Emperor" "The Chosen" "The Cursed King" "The Darkest Dream" "The Deceiver" "The Devastator" "The Encroaching Darkness" "The Enthusiasts" "The Eternal War" "The Eye of the Dragon" "The Feast" "The Fiend" "The Fletcher" "The Gentleman" "The Gulf" "The Insatiable" "The Landing" "The Lich" "The Mercenary" "The One With All" "The Poet" "The Ruthless Ceinture" "The Siren" "The Strategist" "The Thaumaturgist" "The Throne" "The Traitor" "The Undaunted" "The Wolverine" "Treasure Hunter" "Turn the Other Cheek" "Unchained"
 	MinimapIcon 2 Brown Diamond
 	SetBackgroundColor 175 96 37 180
 	SetBorderColor 210 0 0 255
