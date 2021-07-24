@@ -175,7 +175,7 @@ Hide #boots
 	Rarity < Unique
 	ItemLevel >= 86
 	Class "Boots"
-	BaseType "Titan Greaves" "Slink Boots" "Sorcerer Boots" "Murder Boots" "Two-Toned Boots" "Stormrider Boots" "Dreamquest Slippers" "Brimstone Treads" "Fugitive Boots"
+	BaseType "Titan Greaves" "Slink Boots" "Sorcerer Boots" "Murder Boots" "Two-Toned Boots" "Stormrider Boots" "Dreamquest Slippers" "Brimstone Treads" "Fugitive Boots" "Runic Sabatons"
 	SetBackgroundColor 0 0 0 200
 	SetBorderColor 184 218 242 255
 	SetFontSize 18
@@ -185,7 +185,7 @@ Hide #gloves
 	Rarity < Unique
 	ItemLevel >= 85
 	Class "Gloves"
-	BaseType "Titan Gauntlets" "Spiked Gloves" "Slink Gloves" "Gripped Gloves" "Sorcerer Gloves" "Fingerless Silk Gloves" "Dragonscale Gauntlets" "Crusader Gloves" "Murder Mitts" "Sinistral Gloves" "Nexus Gloves" "Debilitation Gauntlets" "Apothecary's Gloves"
+	BaseType "Titan Gauntlets" "Spiked Gloves" "Slink Gloves" "Gripped Gloves" "Sorcerer Gloves" "Fingerless Silk Gloves" "Dragonscale Gauntlets" "Crusader Gloves" "Murder Mitts" "Sinistral Gloves" "Nexus Gloves" "Debilitation Gauntlets" "Apothecary's Gloves" "Runic Gauntlets"
 	SetBackgroundColor 0 0 0 200
 	SetBorderColor 184 218 242 255
 	SetFontSize 18
@@ -195,7 +195,7 @@ Hide #helmets
 	Rarity < Unique
 	ItemLevel >= 86
 	Class "Helmets"
-	BaseType "Royal Burgonet" "Lion Pelt" "Hubris Circlet" "Pig-Faced Bascinet" "Nightmare Bascinet" "Prophet Crown" "Praetor Crown" "Bone Helmet" "Deicide Mask" "Vaal Mask" "Penitent Mask" "Blizzard Crown" "Archdemon Crown"
+	BaseType "Royal Burgonet" "Lion Pelt" "Hubris Circlet" "Pig-Faced Bascinet" "Nightmare Bascinet" "Prophet Crown" "Praetor Crown" "Bone Helmet" "Deicide Mask" "Vaal Mask" "Penitent Mask" "Blizzard Crown" "Archdemon Crown" "Runic Crown"
 	SetBackgroundColor 0 0 0 200
 	SetBorderColor 184 218 242 255
 	SetFontSize 18
@@ -497,21 +497,21 @@ Show #body armour
 Show #boots
 	Rarity = Rare
 	Class "Boots"
-	BaseType "Titan Greaves" "Slink Boots" "Sorcerer Boots" "Murder Boots" "Two-Toned Boots" "Stormrider Boots" "Dreamquest Slippers" "Brimstone Treads" "Fugitive Boots"
+	BaseType "Titan Greaves" "Slink Boots" "Sorcerer Boots" "Murder Boots" "Two-Toned Boots" "Stormrider Boots" "Dreamquest Slippers" "Brimstone Treads" "Fugitive Boots" "Runic Sabatons"
 	SetBackgroundColor 0 0 0 200
 	SetFontSize 24
 	Continue
 Show #gloves
 	Rarity = Rare
 	Class "Gloves"
-	BaseType "Titan Gauntlets" "Spiked Gloves" "Slink Gloves" "Gripped Gloves" "Sorcerer Gloves" "Fingerless Silk Gloves" "Dragonscale Gauntlets" "Crusader Gloves" "Murder Mitts" "Sinistral Gloves" "Nexus Gloves" "Debilitation Gauntlets" "Apothecary's Gloves"
+	BaseType "Titan Gauntlets" "Spiked Gloves" "Slink Gloves" "Gripped Gloves" "Sorcerer Gloves" "Fingerless Silk Gloves" "Dragonscale Gauntlets" "Crusader Gloves" "Murder Mitts" "Sinistral Gloves" "Nexus Gloves" "Debilitation Gauntlets" "Apothecary's Gloves" "Runic Gauntlets"
 	SetBackgroundColor 0 0 0 200
 	SetFontSize 24
 	Continue
 Show #helmets
 	Rarity = Rare
 	Class "Helmets"
-	BaseType "Royal Burgonet" "Lion Pelt" "Hubris Circlet" "Pig-Faced Bascinet" "Nightmare Bascinet" "Prophet Crown" "Praetor Crown" "Bone Helmet" "Deicide Mask" "Vaal Mask" "Penitent Mask" "Blizzard Crown" "Archdemon Crown"
+	BaseType "Royal Burgonet" "Lion Pelt" "Hubris Circlet" "Pig-Faced Bascinet" "Nightmare Bascinet" "Prophet Crown" "Praetor Crown" "Bone Helmet" "Deicide Mask" "Vaal Mask" "Penitent Mask" "Blizzard Crown" "Archdemon Crown" "Runic Crown"
 	SetBackgroundColor 0 0 0 200
 	SetFontSize 24
 	Continue
