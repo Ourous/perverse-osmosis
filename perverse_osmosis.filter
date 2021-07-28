@@ -1118,7 +1118,7 @@ Show
 	SetFontSize 30
 Show
 	Class "Currency"
-	BaseType "Orb of Fusing" "Orb of Alchemy" "Glassblower's Bauble" "Orb of Regret" "Engineer's Orb"
+	BaseType "Orb of Fusing" "Orb of Alchemy" "Glassblower's Bauble" "Orb of Regret" "Engineer's Orb" "Enkindling Orb" "Instilling Orb"
 	MinimapIcon 2 Yellow Circle
 	PlayAlertSoundPositional 11 200
 	SetFontSize 30
@@ -1384,9 +1384,9 @@ Show #gemcutter's
 	BaseType "The Gemcutter" "The Union"
 	SetBackgroundColor 170 158 130 180
 	SetBorderColor 27 162 155 255
-Show #chisel
+Show #chisel & delirium orb
 	Class "Divination Card"
-	BaseType "The Cartographer"
+	BaseType "Dementophobia" "The Cartographer"
 	MinimapIcon 2 Yellow Diamond
 	PlayAlertSound 11 200
 	SetBackgroundColor 170 158 130 180
@@ -1536,7 +1536,7 @@ Show #fishing uniques
 	SetBackgroundColor 175 96 37 180
 Show #enchanted uniques
 	Class "Divination Card"
-	BaseType "Divine Justice"
+	BaseType "Divine Justice" "The Blessing of Moosh"
 	MinimapIcon 2 Brown Diamond
 	SetBackgroundColor 175 96 37 180
 	SetBorderColor 73 85 79 255
