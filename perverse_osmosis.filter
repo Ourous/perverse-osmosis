@@ -1249,7 +1249,7 @@ Show #currency #!TODO! split this up
 	SetBackgroundColor 170 158 130 180
 Show #alteration
 	Class "Divination Card"
-	BaseType "Acclimatisation" "Society's Remorse"
+	BaseType "A Sea of Blue" "Acclimatisation" "Society's Remorse"
 	MinimapIcon 2 Yellow Diamond
 	SetBackgroundColor 170 158 130 180
 Show #fusing shard-like
@@ -1386,7 +1386,7 @@ Show #gemcutter's
 	SetBorderColor 27 162 155 255
 Show #chisel & delirium orb
 	Class "Divination Card"
-	BaseType "Dementophobia" "The Cartographer"
+	BaseType "Ambitious Obsession" "Dementophobia" "The Cartographer"
 	MinimapIcon 2 Yellow Diamond
 	PlayAlertSound 11 200
 	SetBackgroundColor 170 158 130 180
@@ -1559,9 +1559,9 @@ Show #gems #!TODO! split these up
 	BaseType "Dying Anguish" "Gift of the Gemling Queen" "The Enlightened" "The Fox"
 	MinimapIcon 2 Cyan Diamond
 	SetBackgroundColor 27 162 155 180
-Show #corrupt gems #!TODO! split these up
+Show #corrupt gems
 	Class "Divination Card"
-	BaseType "Deathly Designs" "Dialla's Subjugation" "The Artist" "The Bitter Blossom" "The Bones" "The Cataclysm" "The Cheater" "The Dragon's Heart" "The Rite of Elements" "The Skeleton" "The Wilted Rose" "Volatile Power" "Wealth and Power"
+	BaseType "Deathly Designs" "Dialla's Subjugation" "Terrible Secret of Space" "The Artist" "The Bitter Blossom" "The Bones" "The Cataclysm" "The Cheater" "The Dragon's Heart" "The Rite of Elements" "The Skeleton" "The Wilted Rose" "Volatile Power" "Wealth and Power"
 	MinimapIcon 2 Cyan Diamond
 	SetBackgroundColor 27 162 155 180
 	SetBorderColor 210 0 0 255
