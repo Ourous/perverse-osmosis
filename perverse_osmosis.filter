@@ -21,12 +21,18 @@
 #181  75 255 Prophecy
 # 74 230  58 Quest Item
 # 14 186 255 Divination Card
-#136 136 255 Crafting / Base
+#184 218 242 Crafting / Base
 #210   0   0 Corrupted
 #136 136 255 Quality
 
 ## Colors (Custom)
-# 73  85  79 Labyrinth (or 97 130 113)
+#107 107 107 Creates-A-Map (border)
+# 50  50  50 Is-A-Map (background) (or 46 46 46 if it has a border)
+#163 163 163 Is-A-Fragment (text)
+# 97 130 113 Labyrinth / Enchant (text: 116 153 134)
+# 77 110 126 Expedition (background: 34 49 56)
+#124  27   16 Heist (background: 73 16 9)
+#177 153  22 Blight (background: 58 53 35)
 
 ## Font Sizes
 #0-14 are the same
@@ -51,6 +57,8 @@
 #		SetBackgroundColor 0 0 0 140
 #		SetBorderColor ? ? ? 180
 
+
+
 ### Legacy Things #!TODO!#
 Show
 	Class "Leaguestone"
@@ -59,26 +67,18 @@ Show
 	PlayAlertSound 6 150
 	SetBorderColor 96 96 96 255
 
-### One-Off Types #!TODO!#
+### Quest / Area Items
 Show # heist quest items
-	Class "Quest Item"
+	Class "Quest Items"
 	BaseType "Contract:"
-	MinimapIcon 1 Green Star
-	PlayEffect Green
-	SetBackgroundColor 57 57 57 247
-	SetBorderColor 74 230 58 255
-	SetTextColor 74 230 58 255
+	SetBackgroundColor 50 50 50 247
+	Continue
 Show
-	Class "Incursion" "Labyrinth" "Pantheon" "Quest Items"
+	Class "Incursion Items" "Labyrinth Items" "Pantheon Soul" "Quest Items"
 	MinimapIcon 1 Green Star
 	PlayEffect Green
 	SetBorderColor 74 230 58 255
 	SetTextColor 74 230 58 255
-Show #incubators
-	Class "Incubator"
-	MinimapIcon 1 Blue Square
-	PlayEffect Blue Temp
-	SetTextColor 184 218 242 255
 	
 ### Generic Styles
 Show
@@ -90,66 +90,98 @@ Show
 	SetBorderColor 210 0 0 255
 	Continue
 Show
+	AnyEnchantment True
+	SetBorderColor 97 130 113 255
+	Continue
+Show
 	Rarity >= Unique
 	PlayEffect Brown Temp
 	Continue
-
-### Expedition
+	
+### Alva / Incursion
 Show
-	Class "Expedition Logbook"
+	Class "Currency"
+	BaseType "Vial"
+	SetBorderColor 175 96 37 255
+	Continue
+	
+### Maps / Fragments
+
+Show
+	Class "Maps" "Contract" "Blueprint" "Expedition Logbook" "Misc Map Item"
+	SetBackgroundColor 50 50 50 247
+	MinimapIcon 2 Grey Hexagon
+	Continue
+	
+Show
+	Rarity >= Unique
+	Class "Maps" "Contract"
+	MinimapIcon 1 Brown Hexagon
+	Continue
+	
+Show # runnable fragments
+	Class "Map Fragments"
+	BaseType "Emblem" "Breachstone" "to the Goddess" "Sacrifice" "Mortal"
+	SetBackgroundColor 50 50 50 247
+	Continue
+	
+Show # unique-like complete fragments
+	Class "Map Fragments"
+	BaseType "Emblem" "Breachstone"
+	SetTextColor 175 96 37 255
+	MinimapIcon 1 Brown Hexagon
+	Continue
+	
+Show # offerings
+	Class "Map Fragments"
+	BaseType "to the Goddess"
+	SetTextColor 116 153 134 255
+	MinimapIcon 2 Grey Hexagon
+	Continue
+
+Show # scarab-like fragments
+	Class "Map Fragments"
+	BaseType "Sacrifice" "Mortal" "Key" "Fragment"
+	SetBorderColor 107 107 107 255
+	SetTextColor 163 163 163 255
+	MinimapIcon 2 Grey Triangle
+	Continue
+	
+Show # scarabs and lures
+	Class "Map Fragments"
+	BaseType "Scarab" "Lure"
+	SetTextColor 163 163 163 255
 	MinimapIcon 2 Grey Square
-	SetBackgroundColor 57 57 57 247
-	Continue
 
-### Heist
-Show
-	Class "Heist" "Trinket"
-	SetBackgroundColor 114 0 0  247
-	Continue
-Show
-	Class "Contract" "Blueprint"
-	MinimapIcon 2 Grey Square
-	SetBackgroundColor 57 57 57 247
-	Continue
-
-### Maps
-Show
-	Class "Map"
-	Continue
-Show
-	BaseType "Breachstone"
-	MinimapIcon 1 Grey Hexagon
-	PlayEffect Brown Temp
-	SetBackgroundColor 57 57 57 247
-Show
+Show # divine vessel
 	Class "Map Fragments"
 	BaseType "Divine Vessel"
-	MinimapIcon 1 Green Hexagon
+	MinimapIcon 1 Green Square
 	PlayEffect Green Temp
 	PlayAlertSound 13 150
 	SetBorderColor 74 230 58 255
-#	SetBorderColor 96 96 96 255
+	SetTextColor 163 163 163 255
+	Continue
+	
+### Expedition
+Show # re-rolls and artifacts
+	BaseType "Exotic Coinage" "Scrap Metal" "Astragali" "Burial Medallion" "Artifact"
+	MinimapIcon 2 Yellow Circle
+	SetBorderColor 77 110 126 255
+	Continue
+
+### Blight
 Show
-	Class "Map Fragments"
-	BaseType "Scarab"
-	MinimapIcon 1 White Hexagon
-	PlayEffect White Temp
-	PlayAlertSound 13 150
-	SetBorderColor 96 96 96 255
+	BaseType "Oil"
+	SetBorderColor 97 130 113 255
+	Continue
+
+### Metamorph
 Show
-	Class "Map Fragments"
-	MinimapIcon 2 Grey Triangle
-	SetBorderColor 96 96 96 255
-Show
-	Rarity >= Unique
-	Class "Map"
-	MinimapIcon 1 Brown Hexagon
-	PlayEffect Brown Temp
-	SetBackgroundColor 57 57 57 247
-Show
-	Class "Map"
-	MinimapIcon 2 Grey Hexagon
-	SetBackgroundColor 57 57 57 247
+	Class "Sample"
+	#SetBackgroundColor 8 56 8 247
+	SetBorderColor 0 191 0 255
+	Continue
 
 ### Basic Items
 Hide
@@ -390,23 +422,6 @@ Hide #amulets
 	SetBorderColor 184 218 242 255
 	SetFontSize 18
 	Continue
-Hide #restore flasks
-	Rarity < Unique
-	ItemLevel >= 20
-	Class "Life Flasks" "Mana Flasks" "Hybrid Flasks"
-	BaseType "Hallowed Hybrid Flask" "Eternal Life Flask" "Divine Life Flask" "Hallowed Life Flask" "Eternal Mana Flask" "Divine Mana Flask" "Hallowed Mana Flask"
-	SetBackgroundColor 0 0 0 200
-	SetBorderColor 184 218 242 255
-	SetFontSize 18
-	Continue
-Hide #utility flasks
-	Rarity < Unique
-	ItemLevel >= 20
-	Class "Utility Flasks"
-	SetBackgroundColor 0 0 0 200
-	SetBorderColor 184 218 242 255
-	SetFontSize 18
-	Continue
 Hide #jewels
 	Corrupted False
 	Rarity < Unique
@@ -453,16 +468,9 @@ Hide #chromatic recipe
 	SetBorderColor 170 158 130 255
 	SetFontSize 21
 	Continue
-Hide #glassblower's recipe
-	Class "Flask"
-	Quality > 0
-	SetBackgroundColor 0 0 0 200
-	SetBorderColor 170 158 130 255
-	SetFontSize 21
-	Continue
 Hide
 	Rarity <= Magic
-	Class "Belts" "Amulets" "Rings" "Quivers" "Shields" "Swords" "Sceptres" "Maces" "Bows" "Wands" "Boots" "Daggers" "Rune Daggers" "Staves" "Warstaves" "Axes" "Body Armours" "Helmet" "Gloves" "Claws" "Flask"
+	Class "Belts" "Amulets" "Rings" "Quivers" "Shields" "Swords" "Sceptres" "Maces" "Bows" "Wands" "Boots" "Daggers" "Rune Daggers" "Staves" "Warstaves" "Axes" "Body Armours" "Helmet" "Gloves" "Claws"
 	Continue
 Hide
 	AreaLevel > 67
@@ -485,6 +493,7 @@ Show
 	SetBackgroundColor 0 0 0 200
 	SetFontSize 24
 	Continue	
+
 
 ### Rare Bases-types
 Show #body armour
@@ -649,21 +658,239 @@ Show #amulets
 	SetFontSize 24
 	Continue
 	
-### Advanced Items
+### Flasks
 Show
-	AreaLevel <= 67
-	Rarity <= Magic
 	Class "Flask"
-	SetBackgroundColor 0 0 0 240
-	SetFontSize 27
+	SetBackgroundColor 0 0 0 200
+	SetFontSize 24
 	Continue
+	
 Show
-	Rarity = Rare
-	Class "Amulet"
-	BaseType "Talisman"
-	SetBackgroundColor 0 0 0 240
-	SetFontSize 27
+	Class "Flask"
+	Quality > 0
+	SetBorderColor 170 158 130 255
 	Continue
+	
+### Life Flasks
+	
+Show # life flask bases
+	Rarity < Unique
+	ItemLevel >= 84
+	Class "Life Flasks"
+	BaseType "Hallowed Life Flask" "Divine Life Flask" "Eternal Life Flask"
+	SetBorderColor 184 218 242 255
+	Continue
+	
+Hide
+	AreaLevel >= 6
+	Class "Life Flasks"
+	BaseType "Small Life Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 12
+	Class "Life Flasks"
+	BaseType "Medium Life Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 18
+	Class "Life Flasks"
+	BaseType "Large Life Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 24
+	Class "Life Flasks"
+	BaseType "Greater Life Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 30
+	Class "Life Flasks"
+	BaseType "Grand Life Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 36
+	Class "Life Flasks"
+	BaseType "Giant Life Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 42
+	Class "Life Flasks"
+	BaseType "Colossal Life Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 50
+	Class "Life Flasks"
+	BaseType "Sacred Life Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 60
+	Class "Life Flasks"
+	BaseType "Sanctified Life Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+	
+### Mana Flasks
+	
+Show # mana flask bases
+	Rarity < Unique
+	ItemLevel >= 84
+	Class "Mana Flasks"
+	BaseType "Hallowed Mana Flask" "Divine Mana Flask" "Eternal Mana Flask"
+	SetBorderColor 184 218 242 255
+	Continue
+	
+Hide
+	AreaLevel >= 6
+	Class "Mana Flasks"
+	BaseType "Small Mana Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 12
+	Class "Mana Flasks"
+	BaseType "Medium Mana Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 18
+	Class "Mana Flasks"
+	BaseType "Large Mana Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 24
+	Class "Mana Flasks"
+	BaseType "Greater Mana Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 30
+	Class "Mana Flasks"
+	BaseType "Grand Mana Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 36
+	Class "Mana Flasks"
+	BaseType "Giant Mana Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 42
+	Class "Mana Flasks"
+	BaseType "Colossal Mana Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 50
+	Class "Mana Flasks"
+	BaseType "Sacred Mana Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 60
+	Class "Mana Flasks"
+	BaseType "Sanctified Mana Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+	
+### Hybrid Flasks
+
+Show # hybrid flask bases
+	Rarity < Unique
+	ItemLevel >= 84
+	Class "Hybrid Flasks"
+	BaseType "Hallowed Hybrid Flask"
+	SetBorderColor 184 218 242 255
+	Continue
+	
+Hide
+	AreaLevel >= 20
+	Class "Hybrid Flasks"
+	BaseType "Small Hybrid Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 30
+	Class "Hybrid Flasks"
+	BaseType "Medium Hybrid Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 40
+	Class "Hybrid Flasks"
+	BaseType "Large Hybrid Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 50
+	Class "Hybrid Flasks"
+	BaseType "Colossal Hybrid Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+Hide
+	AreaLevel >= 60
+	Class "Hybrid Flasks"
+	BaseType "Sacred Hybrid Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+	
+### Utility Flasks
+
+Show # utility flask bases
+	Rarity < Unique
+	ItemLevel >= 85
+	Class "Utility Flasks"
+	SetBorderColor 184 218 242 255
+	Continue
+	
+Hide # hide normal flasks in maps
+	AreaLevel > 67
+	Rarity = Normal
+	Class "Flask"
+	SetBackgroundColor 0 0 0 160
+	SetFontSize 0
+	Continue
+
+Show #glassblower's recipe
+	Class "Flask"
+	Quality = 20
+	SetBackgroundColor 0 0 0 200
+	SetBorderColor 170 158 130 255
+	SetFontSize 30
+	Continue
+	
+### Advanced Items
 Show
 	Class "Jewel"
 	Rarity <= Magic
@@ -708,32 +935,25 @@ Show
 	SetBackgroundColor 0 0 0 240
 	SetFontSize 27
 	Continue
-Show #glassblower's recipe
-	Class "Flask"
-	Rarity = Normal
-	Quality = 20
-	SetBackgroundColor 0 0 0 240
-	SetFontSize 30
-	Continue
 Show #jeweler recipe
 	Sockets = 6
 	MinimapIcon 2 Yellow Square
 	PlayAlertSoundPositional 11 125
 	SetBackgroundColor 0 0 0 240
 	SetBorderColor 170 158 130 255
-	SetFontSize 30
+	SetFontSize 27
+	Continue
+Show #enchants
+	AnyEnchantment True
+	SetBackgroundColor 0 0 0 240
+	SetBorderColor 97 130 113 255
+	SetFontSize 27
 	Continue
 Show
 	Rarity >= Unique
 	Class "Belts" "Amulets" "Rings" "Quivers" "Shields" "Swords" "Sceptres" "Maces" "Bows" "Wands" "Boots" "Daggers" "Rune Daggers" "Staves" "Warstaves" "Axes" "Body Armours" "Helmet" "Gloves" "Claws" "Flask" "Jewel"
 	MinimapIcon 2 Brown Square
 	SetBackgroundColor 0 0 0 240
-	SetFontSize 30
-	Continue
-Show #enchants
-	AnyEnchantment True
-	SetBackgroundColor 0 0 0 240
-	SetBorderColor 73 85 79 255
 	SetFontSize 30
 	Continue
 Show #veiled mods
@@ -892,7 +1112,6 @@ Show
 	PlayEffect Blue
 	PlayAlertSound 16 175
 	SetBorderColor 210 0 0 255
-	SetTextColor 184 218 242 255
 Show
 	Class "Currency"
 	BaseType "Essence of Delirium" "Essence of Horror" "Essence of Insanity" "Essence of Hysteria"
@@ -900,7 +1119,6 @@ Show
 	PlayEffect Blue
 	PlayAlertSound 16 175
 	SetBorderColor 184 218 242 255
-	SetTextColor 184 218 242 255
 Show
 	Class "Currency"
 	BaseType "Essence"
@@ -909,14 +1127,27 @@ Show
 	PlayEffect Blue Temp
 	PlayAlertSound 16 175
 	SetBorderColor 184 218 242 255
-	SetTextColor 184 218 242 255
 Show
 	Class "Currency"
 	BaseType "Essence"
 	MinimapIcon 2 Yellow Circle
 	PlayEffect Blue Temp
 	PlayAlertSoundPositional 16 175
-	SetTextColor 184 218 242 255
+	
+	
+### Oils
+Show
+    Class "Currency"
+	BaseType "Oil"
+	MinimapIcon 2 Yellow Circle
+	PlayAlertSoundPositional 11 200
+	SetBorderColor 97 130 113 255
+	Continue
+Show
+	Class "Currency"
+	BaseType "Tainted Oil"
+	SetBorderColor 210 0 0 255
+	Continue
 
 ### Currency #!TODO!# reclassify borders properly
 Show
@@ -932,6 +1163,7 @@ Show
 	SetBorderColor 184 218 242 255
 	SetTextColor 0 0 0 255
 	SetFontSize 45
+	Continue
 Show
 	BaseType "Mirror Shard"
 	MinimapIcon 0 Red Triangle
@@ -939,6 +1171,7 @@ Show
 	PlayAlertSound 4 275
 	SetBorderColor 170 158 130 255
 	SetFontSize 45
+	Continue
 Show
     Class "Currency"
 	BaseType "Eternal Orb"
@@ -947,6 +1180,16 @@ Show
 	PlayAlertSound 6 275
 	SetBorderColor 184 218 242 255
 	SetFontSize 45
+	Continue
+Show
+	Class "Currency"
+	BaseType "Sacred Orb"
+	MinimapIcon 0 Yellow Circle
+	PlayEffect Yellow
+	PlayAlertSound 6 275
+	SetBorderColor 184 218 242 255
+	SetFontSize 45
+	Continue
 Show
 	BaseType "Albino Rhoa Feather"
 	MinimapIcon 0 Red Circle
@@ -955,6 +1198,7 @@ Show
 	SetBackgroundColor 255 255 255 240
 	SetTextColor 0 0 0 255
 	SetFontSize 45
+	Continue
 Show
     Class "Currency"
 	BaseType "Awakener's Orb" "Hunter's Exalted Orb" "Redeemer's Exalted Orb" "Crusader's Exalted Orb" "Warlord's Exalted Orb" "Maven's Orb"
@@ -963,6 +1207,7 @@ Show
 	PlayAlertSound 10 250
     SetBorderColor 184 218 242 255
 	SetFontSize 42
+	Continue
 Show
     Class "Currency"
 	BaseType "Exalted Orb"
@@ -971,6 +1216,7 @@ Show
 	PlayAlertSound 10 250
 	SetBorderColor 255 255 119 255
 	SetFontSize 42
+	Continue
 Show
 	BaseType "Exalted Shard"
 	MinimapIcon 1 Yellow Triangle
@@ -979,6 +1225,7 @@ Show
 	SetBackgroundColor 0 0 0 220
 	SetBorderColor 255 255 119 255
 	SetFontSize 36
+	Continue
 Show
     Class "Currency"
 	BaseType "Divine Orb" "Orb of Annulment"
@@ -987,6 +1234,7 @@ Show
 	PlayAlertSound 2 200
 	SetBorderColor 184 218 242 255
 	SetFontSize 39
+	Continue
 Show
 	Class "Currency"
 	BaseType "Annulment Shard"
@@ -995,6 +1243,7 @@ Show
 	SetBackgroundColor 0 0 0 220
 	SetBorderColor 184 218 242 255
 	SetFontSize 30
+	Continue
 Show
     Class "Currency"
 	BaseType "Ancient Orb"
@@ -1003,6 +1252,7 @@ Show
 	PlayAlertSound 2 200
 	SetBorderColor 175 96 37 255
 	SetFontSize 39
+	Continue
 Show
     Class "Currency"
 	BaseType "Ancient Shard"
@@ -1011,6 +1261,7 @@ Show
 	SetBackgroundColor 0 0 0 220
 	SetBorderColor 175 96 37 255
 	SetFontSize 33
+	Continue
 Show
     Class "Currency"
 	BaseType "Harbinger's Orb"
@@ -1019,6 +1270,7 @@ Show
 	PlayAlertSound 2 200
 	SetBorderColor 96 96 96 255
 	SetFontSize 39
+	Continue
 Show
 	Class "Currency"
 	BaseType "Harbinger's Shard"
@@ -1027,14 +1279,16 @@ Show
 	SetBackgroundColor 0 0 0 220
 	SetBorderColor 96 96 96 255
 	SetFontSize 33
+	Continue
 Show
 	Class "Currency"
-	BaseType "Blessing of"
+	BaseType "Blessing of" "Vial"
 	MinimapIcon 2 Yellow Circle
 	PlayEffect Yellow
 	PlayAlertSound 12 175
 	SetBorderColor 175 96 37 255
 	SetFontSize 36
+	Continue
 Show
     Class "Currency"
 	BaseType "Orb of Horizons"
@@ -1042,6 +1296,7 @@ Show
 	PlayAlertSound 16 175
 	SetBorderColor 96 96 96 255
 	SetFontSize 36
+	Continue
 Show
     Class "Currency"
 	BaseType "Horizon Shard"
@@ -1050,6 +1305,7 @@ Show
 	SetBackgroundColor 0 0 0 220
 	SetBorderColor 96 96 96 255
 	SetFontSize 30
+	Continue
 Show
     Class "Currency"
 	BaseType "Chaos Orb"
@@ -1057,6 +1313,7 @@ Show
 	PlayAlertSound 16 175
 	SetBorderColor 255 255 119 255
 	SetFontSize 33
+	Continue
 Show
     Class "Currency"
 	BaseType "Chaos Shard"
@@ -1065,6 +1322,7 @@ Show
 	SetBackgroundColor 0 0 0 220
 	SetBorderColor 255 255 119 255
 	SetFontSize 27
+	Continue
 Show
     Class "Currency"
 	BaseType "Blessed Orb" "Catalyst"
@@ -1072,6 +1330,7 @@ Show
 	PlayAlertSound 16 175
 	SetBorderColor 184 218 242 255
 	SetFontSize 33
+	Continue
 Show
     Class "Currency"
 	BaseType "Resonator"
@@ -1079,6 +1338,7 @@ Show
 	PlayAlertSound 16 175
 	SetBorderColor 170 158 130 255
 	SetFontSize 33
+	Continue
 Show
     Class "Currency"
 	BaseType "Regal Orb"
@@ -1086,6 +1346,7 @@ Show
 	PlayAlertSound 16 175
 	SetBorderColor 136 136 255 255
 	SetFontSize 33
+	Continue
 Show
     Class "Currency"
 	BaseType "Regal Shard"
@@ -1094,6 +1355,7 @@ Show
 	SetBackgroundColor 0 0 0 220
 	SetBorderColor 136 136 255 255
 	SetFontSize 27
+	Continue
 Show
     Class "Currency"
 	BaseType "Vaal Orb"
@@ -1101,6 +1363,7 @@ Show
 	PlayAlertSound 16 175
 	SetBorderColor 210 0 0 255
 	SetFontSize 33
+	Continue
 Show
     Class "Currency"
 	BaseType "Stacked Deck"
@@ -1109,19 +1372,22 @@ Show
 	PlayAlertSound 3 175
 	SetBorderColor 14 186 255 255
 	SetFontSize 33
+	Continue
 Show
     Class "Currency"
-	BaseType "Sextant" "Orb of Unmaking"
-	MinimapIcon 2 Yellow Circle
+	BaseType "Sextant" "Orb of Unmaking" "Delirium Orb"
+	MinimapIcon 2 Grey Circle
 	PlayAlertSound 16 150
 	SetBorderColor 96 96 96 255
 	SetFontSize 30
+	Continue
 Show
 	Class "Currency"
 	BaseType "Orb of Fusing" "Orb of Alchemy" "Glassblower's Bauble" "Orb of Regret" "Engineer's Orb" "Enkindling Orb" "Instilling Orb"
 	MinimapIcon 2 Yellow Circle
 	PlayAlertSoundPositional 11 200
 	SetFontSize 30
+	Continue
 Show
 	Class "Currency"
 	BaseType "Fossil"
@@ -1129,111 +1395,114 @@ Show
 	PlayAlertSoundPositional 11 200
 	SetBorderColor 170 158 130 255
 	SetFontSize 30
+	Continue
 Show
     Class "Currency"
 	BaseType "Orb of Scouring"
 	MinimapIcon 2 Yellow Circle
 	PlayAlertSoundPositional 11 200
-	SetBorderColor 184 218 242 255
+	SetBorderColor 200 200 200 255
 	SetFontSize 30
+	Continue
 Show
-    Class "Currency"
-	BaseType "Oil"
-	MinimapIcon 2 Yellow Circle
-	PlayAlertSoundPositional 11 200
-	SetFontSize 30
-Show
-	BaseType "Cartographer's Chisel" "Delirium Orb"
+	BaseType "Cartographer's Chisel"
 	MinimapIcon 2 Grey Circle
 	PlayAlertSoundPositional 11 200
-	SetBorderColor 96 96 96 255
+	SetBorderColor 107 107 107 255
 	SetFontSize 30
+	Continue
 Show
 	BaseType "Gemcutter's Prism"
 	MinimapIcon 2 Cyan Circle
 	PlayAlertSoundPositional 11 200
 	SetBorderColor 27 162 155 255
 	SetFontSize 30
+	Continue
 Show
 	BaseType "Silver Coin"
 	MinimapIcon 2 Purple Circle
 	SetBorderColor 181 75 255 255
 	SetFontSize 30
+	Continue
 Show
 	BaseType "Orb of Chance" "Jeweller's Orb" "Chromatic Orb" "Orb of Binding"
 	DisableDropSound
 	PlayAlertSoundPositional 11 150
-	SetFontSize 30
+	SetFontSize 27
+	Continue
 Show
 	Class "Currency"
-	BaseType "Crescent Splinter"
+	BaseType "Splinter"
 	MinimapIcon 2 Grey Triangle
 	PlayAlertSoundPositional 12 150
-	SetBackgroundColor 57 57 57 247
-	SetFontSize 30
-Show
-	Class "Currency"
-	BaseType "Simulacrum Splinter"
-	MinimapIcon 2 Grey Triangle
-	PlayAlertSoundPositional 12 150
-	SetBackgroundColor 57 57 57 247
-	SetFontSize 30
-Show
-	Class "Currency"
-	BaseType "Splinter of"
-	MinimapIcon 2 Grey Triangle
-	PlayAlertSoundPositional 12 150
-	SetBackgroundColor 57 57 57 247
-	SetFontSize 30
-Show
-	Class "Currency"
-	BaseType "Timeless"
-	MinimapIcon 2 Grey Triangle
-	PlayAlertSoundPositional 12 150
-	SetBackgroundColor 57 57 57 247
-	SetFontSize 30
+	SetBorderColor 107 107 107 255
+	SetFontSize 27
+	Continue
 Show
 	BaseType "Binding Shard"
 	DisableDropSound
 	PlayAlertSoundPositional 11 125
 	SetBackgroundColor 0 0 0 160
 	SetBorderColor 170 158 130 255
-	SetFontSize 24
+	SetFontSize 21
+	Continue
 Show
 	BaseType "Alchemy Shard" "Engineer's Shard"
 	PlayAlertSoundPositional 11 175
 	SetBackgroundColor 0 0 0 180
 	SetBorderColor 170 158 130 255
-	SetFontSize 27
+	SetFontSize 24
+	Continue
 Show
-	BaseType "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Alteration"
+	BaseType "Orb of Alteration"
 	DisableDropSound
 	PlayAlertSoundPositional 11 75
 	SetFontSize 27
+	Continue
 Show
 	BaseType "Alteration Shard"
 	DisableDropSound
 	PlayAlertSoundPositional 11 50
 	SetBackgroundColor 0 0 0 160
 	SetBorderColor 170 158 130 255
-	SetFontSize 27
+	SetFontSize 21
+	Continue
 Show
-	BaseType "Armourer's Scrap" "Orb of Transmutation"
+	BaseType "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Transmutation" "Orb of Augmentation"
 	DisableDropSound
 	PlayAlertSoundPositional 11 50
-	SetFontSize 27
+	SetFontSize 24
+	Continue
 Show
     BaseType "Perandus Coin"
-    SetFontSize 27
+    SetFontSize 24
+	Continue
 Show
 	BaseType "Scroll of Wisdom" "Portal Scroll"
-	SetFontSize 27
+	SetFontSize 24
+	Continue
 Show
 	BaseType "Scroll Fragment" "Transmutation Shard"
 	DisableDropSound
 	SetBackgroundColor 0 0 0 160
 	SetBorderColor 170 158 130 255
 	SetFontSize 18
+	Continue
+# currency restyles
+Show
+	Class "Currency"
+	BaseType "Tainted"
+	SetBorderColor 210 0 0 255
+	Continue
+	
+### Incubators (TODO)
+Show
+	Class "Incubator"
+	PlayEffect Purple Temp
+	MinimapIcon 2 Purple Square
+	SetTextColor 181 75 255 255
+	SetFontSize 30
+	Continue
 
 #!TODO! color diamonds for div cards based on what they give. add drop noises based on rewards
 ### Divination Cards
@@ -1252,6 +1521,7 @@ Show #alteration
 	BaseType "A Sea of Blue" "Acclimatisation" "Society's Remorse"
 	MinimapIcon 2 Yellow Diamond
 	SetBackgroundColor 170 158 130 180
+	SetFontSize 27
 Show #fusing shard-like
 	Class "Divination Card"
 	BaseType "Loyalty" "Lucky Connections"
@@ -1267,6 +1537,7 @@ Show #chance shard-like
 	BaseType "The Fool" 
 	MinimapIcon 2 Yellow Diamond
 	SetBackgroundColor 170 158 130 180
+	SetFontSize 27
 Show #regret shard-like
 	Class "Divination Card"
 	BaseType "The Innocent" "Vinia's Token"
@@ -1277,11 +1548,13 @@ Show #scroll fragment-like
 	BaseType "The Scholar" 
 	MinimapIcon 2 Yellow Diamond
 	SetBackgroundColor 170 158 130 180
+	SetFontSize 24
 Show #alchemy shard-like
 	Class "Divination Card"
 	BaseType "The Survivalist"
 	MinimapIcon 2 Yellow Diamond
 	SetBackgroundColor 170 158 130 180
+	SetFontSize 27
 Show #mirror
 	Class "Divination Card"
 	BaseType "House of Mirrors"
@@ -1423,21 +1696,37 @@ Show #divination cards
 	SetBackgroundColor 14 186 255 180
 Show #rares
 	Class "Divination Card"
-	BaseType "Lantador's Lost Love" "The Journalist" "The Lover"
+	BaseType "Lantador's Lost Love" "The Lover"
 	MinimapIcon 2 White Diamond
 	SetBackgroundColor 255 255 119 180
+	SetFontSize 24
+Show #veiled rares
+	Class "Divination Card"
+	BaseType "The Journalist"
+	MinimapIcon 2 White Diamond
+	SetBackgroundColor 255 255 119 180
+	SetFontSize 30
 Show #craftable rares
 	Class "Divination Card"
 	BaseType "Destined to Crumble" "Dying Light" "Nook's Crown" "The Awakened" "The Opulent" "Perfection" "Prometheus' Armoury"
 	MinimapIcon 2 White Diamond
 	SetBackgroundColor 255 255 119 180
 	SetBorderColor 184 218 242 255
-Show #corrupt rares
+	SetFontSize 27
+Show #corrupt rares (talisman)
 	Class "Divination Card"
-	BaseType "Call to the First Ones" "The Warden"
+	BaseType "Call to the First Ones"
 	MinimapIcon 2 White Diamond
 	SetBackgroundColor 255 255 119 180
 	SetBorderColor 210 0 0 255
+	SetFontSize 27
+Show #corrupt rares
+	Class "Divination Card"
+	BaseType  "The Warden"
+	MinimapIcon 2 White Diamond
+	SetBackgroundColor 255 255 119 180
+	SetBorderColor 210 0 0 255
+	SetFontSize 27
 Show #corrupt rare maps
 	Class "Divination Card"
 	BaseType "Left to Fate" "Lingering Remnants" "The Easy Stroll" "The Explorer" "The Trial" "Triskaidekaphobia"
@@ -1449,23 +1738,27 @@ Show #magic
 	BaseType "Keeper's Corruption" "Prosperity" "Struck by Lightning" "The Bear Woman" "The Carrion Crow" "The Inoculated" "The King's Blade" "The Lord in Black" "The Lord of Celebration" "The Sigil" "The Surgeon" "The Rabid Rhoa" "The Twins" "The Web"
 	MinimapIcon 2 White Diamond
 	SetBackgroundColor 136 136 255 180
+	SetFontSize 21
 Show #craftable magic
 	Class "Divination Card"
 	BaseType "A Familiar Call" "Blessing of God" "Merciless Armament" "Shard of Fate" "The Archmage's Right Hand" "The Endurance" "The Golden Era" "The Jester" "The Mountain" "The Road to Power" "The Shortcut" "The Spoiled Prince" "The Tyrant"
 	MinimapIcon 2 White Diamond
 	SetBackgroundColor 136 136 255 180
 	SetBorderColor 184 218 242 255
+	SetFontSize 24
 Show #normal
 	Class "Divination Card"
 	BaseType "The Metalsmith's Gift"
 	MinimapIcon 2 White Diamond
 	SetBackgroundColor 200 200 200 180
+	SetFontSize 21
 Show #craftable normal
 	Class "Divination Card"
 	BaseType "Broken Promises"
 	MinimapIcon 2 White Diamond
 	SetBackgroundColor 200 200 200 180
 	SetBorderColor 184 218 242 255
+	SetFontSize 24
 Show #normal maps
 	Class "Divination Card"
 	BaseType "Boundless Realms" "Cartographer's Delight" "Lost Worlds" "Rain Tempter" "The Arena Champion" "The Tumbleweed" "The Price of Protection" "The Surveyor"
@@ -1478,6 +1771,7 @@ Show #normal jeweller's recipe
 	PlayAlertSound 11 125
 	SetBackgroundColor 200 200 200 180
 	SetBorderColor 170 158 130 255
+	SetFontSize 27
 Show #normal divine recipe
 	Class "Divination Card"
 	BaseType "Bowyer's Dream" "Draped in Dreams" "Emperor of Purity" "The Celestial Justicar" "The Chains that Bind" "The Dapper Prodigy" "Imperial Legacy" "The Dark Mage" "The Ethereal" "The Porcupine" "The Sacrifice" "The Warlord"
@@ -1508,6 +1802,7 @@ Show #splinters
 	MinimapIcon 2 Grey Diamond
 	SetBackgroundColor 200 200 200 180
 	SetBorderColor 96 96 96 255
+	SetFontSize 27
 Show #scarabs
 	Class "Divination Card"
 	BaseType "Buried Treasure" "Cameria's Cut" "More is Never Enough" "The Card Sharp" "The Deal"
@@ -1571,28 +1866,3 @@ Show #quality gems #!TODO! split these up
 	MinimapIcon 2 Cyan Diamond
 	SetBackgroundColor 27 162 155 180
 	SetBorderColor 136 136 255 255
-Show #prophecies #!TODO!# give these borders?
-	Class "Divination Card"
-	BaseType "Friendship" "The Side Quest" "The Valley of Steel Boxes" "The Iron Bard"
-	MinimapIcon 2 Purple Diamond
-	SetBackgroundColor 181 75 255 180
-Show #prophecies for uniques
-    Class "Divination Card"
-    BaseType "A Note in the Wind" "Akil's Prophecy" "The Mad King" "Vile Power"
-    MinimapIcon 2 Purple Diamond
-    SetBackgroundColor 181 75 255 180
-    SetBorderColor 175 96 37 255
-Show #prophecies for crafting
-	Class "Divination Card"
-	BaseType "The Jeweller's Boon"
-	MinimapIcon 2 Purple Diamond
-	SetBackgroundColor 181 75 255 180
-	SetBorderColor 184 218 242 255
-	
-### Prophecies #!TODO!# same way as divination cards, add a drop sound
-Show
-	Class "Currency"
-	Prophecy ""
-	MinimapIcon 2 Purple Square
-	PlayEffect Purple Temp
-	Continue
