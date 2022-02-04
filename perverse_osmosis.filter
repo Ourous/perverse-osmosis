@@ -186,7 +186,7 @@ Show
 ### Basic Items
 Hide
 	Rarity <= Magic
-	Class "Belts" "Amulets" "Rings" "Quivers" "Shields" "Swords" "Sceptres" "Maces" "Bows" "Wands" "Boots" "Daggers" "Rune Daggers" "Staves" "Warstaves" "Axes" "Body Armours" "Helmet" "Gloves" "Claws" "Flasks"
+	Class "Belts" "Amulets" "Rings" "Quivers" "Shields" "Swords" "Sceptres" "Maces" "Bows" "Wands" "Boots" "Daggers" "Rune Daggers" "Staves" "Warstaves" "Axes" "Body Armours" "Helmet" "Gloves" "Claws"
 	SetBackgroundColor 0 0 0 160
 	SetFontSize 0
 	Continue
@@ -387,7 +387,7 @@ Hide #quivers
 	Rarity < Unique
 	ItemLevel >= 85
 	Class "Quivers"
-	BaseType "Two-Point Arrow Quiver" "Sharktooth Arrow Quiver" "Blunt Arrow Quiver" "Fire Arrow Quiver" "Broadhead Arrow Quiver" "Penetrating Arrow Quiver" "Spike-Point Arrow Quiver" "Artillery Quiver"
+	BaseType "Primal Arrow Quiver" "Heavy Arrow Quiver" "Vile Arrow Quiver" "Broadhead Arrow Quiver" "Blazing Arrow Quiver" "Spike-Point Arrow Quiver" "Penetrating Arrow Quiver" "Feathered Arrow Quiver" "Sharktooth Arrow Quiver"
 	SetBackgroundColor 0 0 0 200
 	SetBorderColor 184 218 242 255
 	SetFontSize 18
@@ -632,7 +632,7 @@ Show #wands
 Show #quivers
 	Rarity = Rare
 	Class "Quivers"
-	BaseType "Two-Point Arrow Quiver" "Sharktooth Arrow Quiver" "Blunt Arrow Quiver" "Fire Arrow Quiver" "Broadhead Arrow Quiver" "Penetrating Arrow Quiver" "Spike-Point Arrow Quiver" "Artillery Quiver"
+	BaseType "Primal Arrow Quiver" "Heavy Arrow Quiver" "Vile Arrow Quiver" "Broadhead Arrow Quiver" "Blazing Arrow Quiver" "Spike-Point Arrow Quiver" "Penetrating Arrow Quiver" "Feathered Arrow Quiver" "Sharktooth Arrow Quiver"
 	SetBackgroundColor 0 0 0 200
 	SetFontSize 24
 	Continue
@@ -1201,7 +1201,7 @@ Show
 	Continue
 Show
     Class "Currency"
-	BaseType "Awakener's Orb" "Hunter's Exalted Orb" "Redeemer's Exalted Orb" "Crusader's Exalted Orb" "Warlord's Exalted Orb" "Maven's Orb"
+	BaseType "Awakener's Orb" "Hunter's Exalted Orb" "Redeemer's Exalted Orb" "Crusader's Exalted Orb" "Warlord's Exalted Orb"
 	MinimapIcon 1 Yellow Circle
 	PlayEffect Yellow
 	PlayAlertSound 10 250
