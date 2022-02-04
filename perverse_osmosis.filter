@@ -82,8 +82,8 @@ Show
 	
 ### Generic Styles
 Show
-	SetFontSize 30
 	SetBorderColor 0 0 0 0
+	SetFontSize 30
 	Continue
 Show
 	Corrupted True
@@ -109,8 +109,8 @@ Show
 
 Show
 	Class "Maps" "Contract" "Blueprint" "Expedition Logbook" "Misc Map Item"
-	SetBackgroundColor 50 50 50 247
 	MinimapIcon 2 Grey Hexagon
+	SetBackgroundColor 50 50 50 247
 	Continue
 	
 Show
@@ -128,30 +128,34 @@ Show # runnable fragments
 Show # unique-like complete fragments
 	Class "Map Fragments"
 	BaseType "Emblem" "Breachstone"
-	SetTextColor 175 96 37 255
 	MinimapIcon 1 Brown Hexagon
+	PlayEffect Brown Temp
+	SetTextColor 175 96 37 255
 	Continue
 	
 Show # offerings
 	Class "Map Fragments"
 	BaseType "to the Goddess"
-	SetTextColor 116 153 134 255
 	MinimapIcon 2 Grey Hexagon
+	SetTextColor 116 153 134 255
 	Continue
 
 Show # scarab-like fragments
 	Class "Map Fragments"
 	BaseType "Sacrifice" "Mortal" "Key" "Fragment"
+	MinimapIcon 2 Grey Triangle
 	SetBorderColor 107 107 107 255
 	SetTextColor 163 163 163 255
-	MinimapIcon 2 Grey Triangle
 	Continue
 	
 Show # scarabs and lures
 	Class "Map Fragments"
 	BaseType "Scarab" "Lure"
-	SetTextColor 163 163 163 255
 	MinimapIcon 2 Grey Square
+	PlayEffect Grey Temp
+	PlayAlertSound 13 150
+	SetTextColor 163 163 163 255
+	Continue
 
 Show # divine vessel
 	Class "Map Fragments"
@@ -964,9 +968,9 @@ Show #veiled mods
 Show
 	Class "Amulets"
 	BaseType "Greatwolf Talisman"
+	PlayAlertSoundPositional 1 200
 	SetBackgroundColor 0 0 0 240
 	SetFontSize 36
-	PlayAlertSoundPositional 1 200
 	Continue
 Show
 	HasInfluence Shaper Elder Hunter Redeemer Crusader Warlord
@@ -1495,13 +1499,146 @@ Show
 	SetBorderColor 210 0 0 255
 	Continue
 	
-### Incubators (TODO)
+### Incubators (TODO: complete; custom map icons)
 Show
 	Class "Incubator"
-	PlayEffect Purple Temp
 	MinimapIcon 2 Purple Square
+	PlayEffect Purple Temp
 	SetTextColor 181 75 255 255
 	SetFontSize 30
+	Continue
+Show # abyss rares
+	Class "Incubator"
+	BaseType "Abyssal Incubator"
+	SetBackgroundColor 255 255 119 180
+	Continue
+Show # blight items
+	Class "Incubator"
+	BaseType "Blighted Incubator"
+	Continue
+Show # maps
+	Class "Incubator"
+	BaseType "Cartographer's Incubator"
+	SetBackgroundColor 107 107 107 180
+	Continue
+Show # shaper/elder rares
+	Class "Incubator"
+	BaseType "Celestial Armoursmith's Incubator" "Celestial Blacksmith's Incubator" "Celestial Jeweller's Incubator"
+	SetBackgroundColor 255 255 119 180
+	Continue
+Show # stacked decks
+	Class "Incubator"
+	BaseType "Diviner's Incubator"
+	SetBackgroundColor 170 158 130 180
+	SetBorderColor 14 186 255 255
+	Continue
+Show # elder maps
+	Class "Incubator"
+	BaseType "Eldritch Incubator"
+	SetBackgroundColor 107 107 107 180
+	Continue
+Show # enchanted helmet
+	Class "Incubator"
+	BaseType "Enchanted Incubator"
+	SetBackgroundColor 255 255 119 180
+	SetBorderColor 97 130 113 255
+	Continue
+Show # currency
+	Class "Incubator"
+	BaseType "Fine Incubator"
+	SetBackgroundColor 170 158 130 180
+	Continue
+Show # harbinger
+	Class "Incubator"
+	BaseType "Foreboding Incubator"
+	Continue
+Show # fossils
+	Class "Incubator"
+	BaseType "Fossilised Incubator"
+	SetBackgroundColor 170 158 130 180
+	SetBorderColor 170 158 130 255
+	Continue
+Show # fragments
+	Class "Incubator"
+	BaseType "Fragmented Incubator"
+	SetBackgroundColor 107 107 107 180
+	SetBorderColor 107 107 107 255
+	Continue
+Show # quality gems
+	Class "Incubator"
+	BaseType "Gemcutter's Incubator"
+	SetBackgroundColor 27 162 155 180
+	SetBorderColor 170 158 130 255
+	Continue
+Show # divine recipe (6l)
+	Class "Incubator"
+	BaseType "Geomancer's Incubator"
+	PlayAlertSound 2 175
+	SetBackgroundColor 200 200 200 180
+	SetBorderColor 170 158 130 255
+	SetFontSize 33
+	Continue
+Show # essences
+	Class "Incubator"
+	BaseType "Infused Incubator"
+	SetBackgroundColor 170 158 130 180
+	Continue
+Show # expedition
+	Class "Incubator"
+	BaseType "Kalguuran Incubator"
+	Continue
+Show # delirium
+	Class "Incubator"
+	BaseType "Maddening Incubator"
+	Continue
+Show # metamorph
+	Class "Incubator"
+	BaseType "Morphing Incubator"
+	Continue
+Show # random items
+	Class "Incubator"
+	BaseType "Mysterious Incubator"
+	Continue
+Show # breach
+	Class "Incubator"
+	BaseType "Obscured Incubator"
+	Continue
+Show # currency
+	Class "Incubator"
+	BaseType "Ornate Incubator"
+	SetBackgroundColor 170 158 130 180
+	Continue
+Show # unique map
+	Class "Incubator"
+	BaseType "Otherworldly Incubator"
+	SetBackgroundColor 175 96 37 180
+	Continue
+Show # talisman
+	Class "Incubator"
+	BaseType "Primal Incubator"
+	SetBackgroundColor 255 255 119 180
+	Continue
+Show # unique
+	Class "Incubator"
+	BaseType "Singular Incubator"
+	SetBackgroundColor 175 96 37 180
+	Continue
+Show # scarab
+	Class "Incubator"
+	BaseType "Skittering Incubator"
+	SetBackgroundColor 107 107 107 180
+	SetBorderColor 107 107 107 255
+	Continue
+Show # good gems #TODO: drop noise?
+	Class "Incubator"
+	BaseType "Thaumaturge's Incubator"
+	SetBackgroundColor 27 162 155 180
+	SetFontSize 33
+	Continue
+Show # league unique
+	Class "Incubator"
+	BaseType "Time-Lost Incubator"
+	SetBackgroundColor 175 96 37 180
 	Continue
 
 #!TODO! color diamonds for div cards based on what they give. add drop noises based on rewards
@@ -1813,7 +1950,7 @@ Show #essences
 	Class "Divination Card"
 	BaseType "The Cacophony" "Three Voices" "Harmony of Souls"
 	MinimapIcon 2 Yellow Diamond
-	SetBackgroundColor 184 218 242 180
+	SetBackgroundColor 170 158 130 180
 Show #uniques #!TODO! split this up
 	Class "Divination Card"
 	BaseType "A Dab of Ink" "A Mother's Parting Gift" "Alone in the Darkness" "Assassin's Favour"  "Birth of the Three" "Boon of the First Ones" "Council of Cats" "Cursed Words" "Dark Temptation" "Death" "Doedre's Madness" "Earth Drinker" "Glimmer of Hope" "Heterochromia" "Hubris" "Hunter's Resolve" "Hunter's Reward" "Jack in the Box" "Light and Truth" "Might is Right" "Mitts" "Peaceful Moments" "Rats" "Rebirth" "Scholar of the Seas" "The Admirer" "The Aesthete" "The Army of Blood" "The Battle Born" "The Beast" "The Betrayal" "The Blazing Fire" "The Body" "The Breach" "The Cache" "The Calling" "The Coming Storm" "The Conduit" "The Craving" "The Demoness" "The Doctor" "The Dragon" "The Dreamland" "The Drunken Aristocrat" "The Endless Darkness" "The Escape" "The Fathomless Depths" "The Formless Sea" "The Forsaken" "The Garish Power" "The Gladiator" "The Harvester" "The Hermit" "The Hunger" "The Incantation" "The King's Heart" "The Last One Standing" "The Lion" "The Lunaris Priestess" "The Master" "The Mayor" "The Messenger" "The Oath" "The Offering" "The Pack Leader" "The Pact" "The Penitent" "The Polymath" "The Primordial" "The Professor" "The Queen" "The Risk" "The Samurai's Eye" "The Scarred Meadow" "The Scavenger" "The Soul" "The Spark and the Flame" "The Standoff" "The Stormcaller" "The Sun" "The Sword King's Salute" "The Tower" "The Twilight Moon" "The Unexpected Prize" "The Valkyrie" "The Vast" "The Visionary" "The Watcher" "The Wind" "The Witch" "The Wolf" "The Wolf's Shadow" "The Wolven King's Bite" "The World Eater" "The Wretched" "Thirst for Knowledge" "Thunderous Skies" "Time-Lost Relic" "Tranquillity"
@@ -1834,7 +1971,7 @@ Show #enchanted uniques
 	BaseType "Divine Justice" "The Blessing of Moosh"
 	MinimapIcon 2 Brown Diamond
 	SetBackgroundColor 175 96 37 180
-	SetBorderColor 73 85 79 255
+	SetBorderColor 97 130 113 255
 Show #corrupt uniques
 	Class "Divination Card"
 	BaseType "A Modest Request" "Anarchy's Price" "Arrogance of the Vaal" "Atziri's Arsenal" "Audacity" "Blind Venture" "Brotherhood in Exile" "Deadly Joy" "Echoes of Love" "Etched in Blood" "Fateful Meeting" "Forbidden Power" "Hope" "Love Through Ice" "Luck of the Vaal" "Luminous Trove" "Lysah's Respite" "Mawr Blaidd" "Pride Before the Fall" "The Astromancer" "The Avenger" "The Brittle Emperor" "The Chosen" "The Cursed King" "The Darkest Dream" "The Deceiver" "The Devastator" "The Encroaching Darkness" "The Enthusiasts" "The Eternal War" "The Eye of the Dragon" "The Feast" "The Fiend" "The Fletcher" "The Gentleman" "The Gulf" "The Insatiable" "The Landing" "The Lich" "The Mercenary" "The One With All" "The Poet" "The Ruthless Ceinture" "The Siren" "The Strategist" "The Thaumaturgist" "The Throne" "The Traitor" "The Undaunted" "The Wolverine" "Treasure Hunter" "Turn the Other Cheek" "Unchained"
