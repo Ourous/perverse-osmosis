@@ -174,12 +174,6 @@ Show # re-rolls and artifacts
 	SetBorderColor 77 110 126 255
 	Continue
 
-### Blight
-Show
-	BaseType "Oil"
-	SetBorderColor 97 130 113 255
-	Continue
-
 ### Metamorph
 Show
 	Class "Sample"
@@ -973,7 +967,17 @@ Show
 	SetFontSize 36
 	Continue
 Show
-	HasInfluence Shaper Elder Hunter Redeemer Crusader Warlord
+	HasInfluence Shaper Elder Hunter Redeemer Crusader Warlord 
+	SetBackgroundColor 0 0 0 240
+	SetFontSize 33
+	Continue
+Show
+	HasSearingExarchImplicit >= 1
+	SetBackgroundColor 0 0 0 240
+	SetFontSize 33
+	Continue
+Show
+	HasEaterOfWorldsImplicit >= 1
 	SetBackgroundColor 0 0 0 240
 	SetFontSize 33
 	Continue
@@ -1205,7 +1209,7 @@ Show
 	Continue
 Show
     Class "Currency"
-	BaseType "Awakener's Orb" "Hunter's Exalted Orb" "Redeemer's Exalted Orb" "Crusader's Exalted Orb" "Warlord's Exalted Orb"
+	BaseType "Awakener's Orb" "Hunter's Exalted Orb" "Redeemer's Exalted Orb" "Crusader's Exalted Orb" "Warlord's Exalted Orb" "Orb of Dominance"
 	MinimapIcon 1 Yellow Circle
 	PlayEffect Yellow
 	PlayAlertSound 10 250
